@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Travelocity" skipped="0" tests="1" time="23.75" timestamp="2021-03-30 06:24:04"><testcase name="Viaje ida y vuelta"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+tasks.FlightDestination.performAs(FlightDestination.java:33)&#13;
+stepdefinitions.travelocityStepDefinitions.cliente_selecciona(travelocityStepDefinitions.java:45)&#13;
+✽.cliente selecciona(file:///C:/Users/Yesica%20G/eclipse-workspace/com.pruebatecnica.travelocity/src/test/resources/features/travelocity.feature:12)&#13;
+</system-err></testcase></testsuite>

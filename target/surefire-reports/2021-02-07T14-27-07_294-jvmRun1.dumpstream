@@ -1,0 +1,162 @@
+# Created at 2021-02-07T14:28:01.994
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2021-02-07T14:28:02.334
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.337
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.actions.OpenPage$ByteBuddy$7fql870L.performAs$accessor$vpvhpu6P(Unknown Source)
+
+# Created at 2021-02-07T14:28:02.349
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.350
+Unexpected IOException with stream: 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+# Created at 2021-02-07T14:28:02.351
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.352
+Unexpected IOException with stream: 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+
+# Created at 2021-02-07T14:28:02.353
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.354
+Unexpected IOException with stream: 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+
+# Created at 2021-02-07T14:28:02.356
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.357
+Unexpected IOException with stream: 	at java.lang.reflect.Method.invoke(Method.java:498)
+
+# Created at 2021-02-07T14:28:02.358
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.360
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:492)
+
+# Created at 2021-02-07T14:28:02.361
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.362
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:472)
+
+# Created at 2021-02-07T14:28:02.363
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.364
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:445)
+
+# Created at 2021-02-07T14:28:02.365
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.366
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:201)
+
+# Created at 2021-02-07T14:28:02.368
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.369
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:188)
+
+# Created at 2021-02-07T14:28:02.370
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.371
+Unexpected IOException with stream: 	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:76)
+
+# Created at 2021-02-07T14:28:02.373
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.374
+Unexpected IOException with stream: 	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
+
+# Created at 2021-02-07T14:28:02.375
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.376
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.actions.OpenPage$ByteBuddy$7fql870L.performAs(Unknown Source)
+
+# Created at 2021-02-07T14:28:02.377
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.378
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:253)
+
+# Created at 2021-02-07T14:28:02.379
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.380
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.Actor.perform(Actor.java:234)
+
+# Created at 2021-02-07T14:28:02.381
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.383
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:180)
+
+# Created at 2021-02-07T14:28:02.384
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.385
+Unexpected IOException with stream: 	at net.serenitybdd.screenplay.Actor.wasAbleTo(Actor.java:167)
+
+# Created at 2021-02-07T14:28:02.386
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.387
+Unexpected IOException with stream: 	at stepdefinitions.maxtimeStepDefinitions.ingresa_a_la_url_maxtime(maxtimeStepDefinitions.java:25)
+
+# Created at 2021-02-07T14:28:02.389
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.391
+Unexpected IOException with stream: 	at ?.Brandon Ingresa a la url Maxtime(file:///D:/Choucair/com.choucair.web/src/test/resources/features/maxtime.feature:9)
+
+# Created at 2021-02-07T14:28:02.392
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.393
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:02.395
+Unexpected IOException with stream: 
+
+
+# Created at 2021-02-07T14:28:04.498
+Unexpected IOException: 6,1,runner.RunnerTags,subrunner(runner.RunnerTags),null,null,null
+
+
+# Created at 2021-02-07T14:28:04.499
+Unexpected IOException: 2,1,org.apache.maven.surefire.junit4.JUnit4Provider,runner.RunnerTags,null,null,null
+
+
