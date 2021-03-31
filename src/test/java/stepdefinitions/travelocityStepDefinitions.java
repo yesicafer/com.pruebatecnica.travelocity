@@ -30,6 +30,7 @@ public class travelocityStepDefinitions {
 	@Given("como cliente ingreso a la url de travelocity")
 	public void como_cliente_ingreso_a_la_url_de_travelocity() {
 	 OnStage.theActorCalled("cliente").wasAbleTo(OpenUp.thePage(),FlighUp.theFligh());
+
 	}
 	@When("cliente selecciona")
 	public void cliente_selecciona(io.cucumber.datatable.DataTable dataTable) {

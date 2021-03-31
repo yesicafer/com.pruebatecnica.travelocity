@@ -1,6 +1,7 @@
 package tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static userinterface.selectReprotNewPage.lblDatereport;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -23,7 +24,7 @@ public class FlighUp implements Task {
 	@Override
 	public <T extends Actor> void performAs(T actor) {
 		actor.attemptsTo(Click.on(flightDestinationPage.btnFligh));
-		
+
 	}
 
 }

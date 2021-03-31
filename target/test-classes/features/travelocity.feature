@@ -11,10 +11,10 @@ Feature: Travelocity
     Given como cliente ingreso a la url de travelocity
     When cliente selecciona 
       | yendosePara     | irA      | partiendo       | regresando      |
-      | <"yendosePara"> | <"irA">  |  <"partiendo">  | <"regresando">  | 
+      | <yendosePara> | <irA>  |  <partiendo>  | <regresando>  |
     Then cliente selecciona el vuelo de menos costo
 
   
     Examples: 
-      | yendosePara                         | irA          | partiendo    | tipoHora    | 
+      | yendosePara                         | irA          | partiendo    | regresando    |
       | San Diego (SAN - San Diego Intl.)   | san antonio  | 2021-04-25   | 2021-05-14  | 
