@@ -113,6 +113,13 @@ public class utils extends  PageObject{
 		
 		return null;
 	}
-	
-	
+
+
+	public String generarFecha() {
+		Date fecha = new Date();
+		String strDateFormat = "dd/MM/yyyy";
+		SimpleDateFormat objSDF = new SimpleDateFormat(strDateFormat);
+		return String.valueOf(objSDF.format(fecha));
+	}
+
 }

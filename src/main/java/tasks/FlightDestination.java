@@ -7,6 +7,7 @@ import static userinterface.loginform.txtUsername;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Open;
@@ -50,8 +51,22 @@ public class FlightDestination implements Task {
 		actor.attemptsTo(
 				Click.on(FlightDestinationPage.btnGoTO),
 				Enter.theValue(irA).into(FlightDestinationPage.txtGOTO).thenHit(Keys.ENTER));
+		System.out.println("Hola"+ partiendo.substring(partiendo.indexOf(" ")+1,partiendo.lastIndexOf(" ")));
+		actor.attemptsTo(Click.on(FlightDestinationPage.btnStarDate));
+		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(partiendo.substring(partiendo.indexOf(" ")+1,partiendo.lastIndexOf(" ")))){
+			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
+		}
+		String day = partiendo.substring(0,partiendo.indexOf(" ")).trim();
+		FlightDestinationPage.setBtnDay(day);
+		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()));
 
-		
+		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(regresando.substring(regresando.indexOf(" ")+1,regresando.lastIndexOf(" ")))){
+			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
+		}
+		day = regresando.substring(0,regresando.indexOf(" ")).trim();
+		FlightDestinationPage.setBtnDay(day);
+		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()) ,Click.on( FlightDestinationPage.BtnDone));
+		actor.attemptsTo(Click.on(FlightDestinationPage.BtnSearch));
 
 		System.out.println("Hola");
 		

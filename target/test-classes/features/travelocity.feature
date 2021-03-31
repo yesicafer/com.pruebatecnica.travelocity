@@ -17,4 +17,4 @@ Feature: Travelocity
   
     Examples: 
       | yendosePara                         | irA          | partiendo    | regresando    |
-      | San Diego (SAN - San Diego Intl.)   | san antonio  | 2021-04-25   | 2021-05-14  | 
+      | San Diego (SAN - San Diego Intl.)   | San Antonio (SAT - San Antonio Intl.)  | 25 May 2021  | 28 May 2021  |
