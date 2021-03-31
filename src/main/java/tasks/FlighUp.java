@@ -23,7 +23,7 @@ public class FlighUp implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(Click.on(flightDestinationPage.btnFligh));
+		actor.attemptsTo(Click.on(FlightDestinationPage.btnFligh));
 
 	}
 
