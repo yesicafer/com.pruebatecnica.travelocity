@@ -9,10 +9,18 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import questions.Answer;
+import questions.AnswerLogin;
+import questions.FlightDepartingReturningAnswer;
 import tasks.FlighUp;
+import tasks.FlightDeparting;
 import tasks.FlightDestination;
+import tasks.FlightReturning;
+import tasks.FlighDestinationLogin;
+
 import tasks.OpenUp;
 import tasks.fillOutTheFormDayReport;
 
@@ -27,29 +35,66 @@ public class travelocityStepDefinitions {
 	    OnStage.setTheStage(new OnlineCast());
 	}
 	
-	@Given("como cliente ingreso a la url de travelocity")
-	public void como_cliente_ingreso_a_la_url_de_travelocity() {
+	@Given("than yesica enter the url travelocity")
+	public void than_yesica_enter_the_url_travelocity() {
 	 OnStage.theActorCalled("cliente").wasAbleTo(OpenUp.thePage(),FlighUp.theFligh());
 
 	}
-	@When("cliente selecciona")
-	public void cliente_selecciona(io.cucumber.datatable.DataTable dataTable) {
-	    // Write code here that turns the phrase above into concrete actions
-	    // For automatic transformation, change DataTable to one of
-	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
-	    //
-	    // For other transformations you can register a DataTableType.
-		List<Map<String, String>> rows = dataTable.asMaps();
+	@When("she choose")
+	public void she_choose(io.cucumber.datatable.DataTable dataTable) {
+	    List<Map<String, String>> rows = dataTable.asMaps();
 		 for (Map<String, String> columns: rows) {
-	    	 OnStage.theActorInTheSpotlight().wasAbleTo(FlightDestination.fill(columns.get("yendosePara"), columns.get("irA"), columns.get("partiendo"), columns.get("regresando")));
+	    	 OnStage.theActorInTheSpotlight().wasAbleTo(FlightDestination.fill(columns.get("leavingFrom"), columns.get("goingTo"), columns.get("departing"), columns.get("returning")));
+
 	    }
 	    
 	}
 
-	@Then("cliente selecciona el vuelo de menos costo")
-	public void cliente_selecciona_el_vuelo_de_menos_costo() {
+	@Then("she observe important message in the page {string}")
+	public void she_observe_important_message_in_the_page(String msn) {
+	    OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(msn)));
+	}
+	
+	@When("she want login with user {string} pass {string}")
+	public void she_want_login_with_user_pass(String user, String pass) {
+	    OnStage.theActorInTheSpotlight().attemptsTo(FlighDestinationLogin.the(user,pass));
+	   
+	}
+
+	@Then("she observe your name in the page {string}")
+	public void she_observe_your_name_in_the_page(String name) {
+		 OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(AnswerLogin.toThe(name)));
+	}
+	
+	@When("she choose departing flight firts option")
+	public void she_choose_departing_flight_firts_option() {
+	     OnStage.theActorInTheSpotlight().attemptsTo(FlightDeparting.theFirstElement());
+	    
+	}
+
+	@When("she obsereve price")
+	public void she_obsereve_price() {
+		
+		OnStage.theActorInTheSpotlight().attemptsTo(FlightDepartingReturningAnswer.theGetText());
+	}
+
+	@When("she choose returning flight")
+	public void she_choose_returning_flight() {
+		 OnStage.theActorInTheSpotlight().attemptsTo(FlightReturning.theFirstElement());
+	}
+
+	@When("she review your trip continue")
+	public void she_review_your_trip_continue() {
+	   
+	}
+
+	@When("she check out")
+	public void she_check_out() {
+	  
+	}
+
+	@Then("she observe trip total")
+	public void she_observe_trip_total() {
 	    
 	}
 

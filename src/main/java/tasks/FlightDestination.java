@@ -13,32 +13,35 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.serenitybdd.screenplay.actions.SendKeys;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.waits.WaitUntil;
+
 import org.openqa.selenium.Keys;
 import userinterface.FlightDestinationPage;
+import userinterface.FlighDepartingPage;
 import userinterface.TravelocityPage;
 
 public class FlightDestination implements Task {
-	private String stgyendosePara;
-	private String irA;
-	private String partiendo;
-	private String regresando;
+	private String stgleavingFrom;
+	private String stgGoingTo;
+	private String stgdeparting;
+	private String stgreturning;
 
 
 
 
 
-	public FlightDestination(String yendosePara, String ira, String partiendo, String regresando){
-		this.stgyendosePara =yendosePara;
-		this.irA =ira;
-		this.partiendo =partiendo;
-		this.regresando =regresando;
+	public FlightDestination(String leavingFrom, String goingTo, String departing, String returning){
+		this.stgleavingFrom =leavingFrom;
+		this.stgGoingTo =goingTo;
+		this.stgdeparting =departing;
+		this.stgreturning =returning;
 
 	}
-	public static FlightDestination fill(String yendosePara, String ira, String partiendo, String regresando) {
+	public static FlightDestination fill(String leavingFrom, String goingTo, String departing, String returning) {
 
-		return instrumented(FlightDestination.class,  yendosePara,  ira,  partiendo,  regresando);
+		return instrumented(FlightDestination.class, leavingFrom,  goingTo,  departing,  returning);
 	}
-
 	
 
 	@Override
@@ -46,31 +49,33 @@ public class FlightDestination implements Task {
 	
 	
 		actor.attemptsTo(
-				Click.on(FlightDestinationPage.txtyendosePara));
-		actor.attemptsTo(Enter.theValue(stgyendosePara).into(FlightDestinationPage.txtDesdeDonde).thenHit(Keys.ENTER));
+				Click.on(FlightDestinationPage.btnleavingFrom));
+		actor.attemptsTo(Enter.theValue(stgleavingFrom).into(FlightDestinationPage.txtleavingFrom).thenHit(Keys.ENTER));
 		actor.attemptsTo(
 				Click.on(FlightDestinationPage.btnGoTO),
-				Enter.theValue(irA).into(FlightDestinationPage.txtGOTO).thenHit(Keys.ENTER));
-		System.out.println("Hola"+ partiendo.substring(partiendo.indexOf(" ")+1,partiendo.lastIndexOf(" ")));
+				Enter.theValue(stgGoingTo).into(FlightDestinationPage.txtGOTO).thenHit(Keys.ENTER));
+		System.out.println("Hola"+ stgdeparting.substring(stgdeparting.indexOf(" ")+1,stgdeparting.lastIndexOf(" ")));
 		actor.attemptsTo(Click.on(FlightDestinationPage.btnStarDate));
-		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(partiendo.substring(partiendo.indexOf(" ")+1,partiendo.lastIndexOf(" ")))){
+		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(stgdeparting.substring(stgdeparting.indexOf(" ")+1,stgdeparting.lastIndexOf(" ")))){
 			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
 		}
-		String day = partiendo.substring(0,partiendo.indexOf(" ")).trim();
+		String day = stgdeparting.substring(0,stgdeparting.indexOf(" ")).trim();
 		FlightDestinationPage.setBtnDay(day);
 		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()));
 
-		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(regresando.substring(regresando.indexOf(" ")+1,regresando.lastIndexOf(" ")))){
+		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(stgreturning.substring(stgreturning.indexOf(" ")+1,stgreturning.lastIndexOf(" ")))){
 			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
 		}
-		day = regresando.substring(0,regresando.indexOf(" ")).trim();
+		day = stgreturning.substring(0,stgreturning.indexOf(" ")).trim();
 		FlightDestinationPage.setBtnDay(day);
 		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()) ,Click.on( FlightDestinationPage.BtnDone));
-		actor.attemptsTo(Click.on(FlightDestinationPage.BtnSearch));
+		actor.attemptsTo(Click.on(FlightDestinationPage.BtnSearch),WaitUntil.the(FlighDepartingPage.lblDepartingFlight,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds());
+		
 
 		System.out.println("Hola");
 		
 	}
+
 
 	
 
