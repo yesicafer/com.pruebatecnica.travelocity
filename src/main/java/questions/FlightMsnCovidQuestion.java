@@ -6,16 +6,16 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import userinterface.FlighDepartingPage;
 
-public class Answer implements Question<Boolean>  {
+public class FlightMsnCovidQuestion implements Question<Boolean>  {
 	
 	private String msn;
 
-	public Answer (String msn) {
+	public FlightMsnCovidQuestion (String msn) {
 		this.msn=msn;
 	}
 
-	public static Answer  toThe(String msn) {
-		return new Answer(msn);
+	public static FlightMsnCovidQuestion  toThe(String msn) {
+		return new FlightMsnCovidQuestion(msn);
 	}
 
 	@Override

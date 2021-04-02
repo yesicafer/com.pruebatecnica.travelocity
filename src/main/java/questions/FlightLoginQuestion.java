@@ -5,16 +5,16 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 //import userinterface.
 import userinterface.FlighLoginPage;
-public class AnswerLogin implements Question<Boolean> {
+public class FlightLoginQuestion implements Question<Boolean> {
 	
 	private String name;
 
-	public AnswerLogin (String name) {
+	public FlightLoginQuestion (String name) {
 		this.name=name;
 	}
-	public static AnswerLogin toThe(String name) {
+	public static FlightLoginQuestion toThe(String name) {
 		
-		return new AnswerLogin(name);
+		return new FlightLoginQuestion(name);
 	}
 
 	@Override

@@ -10,27 +10,26 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import tasks.FlightDeparting;
 import userinterface.FlighDepartingPage;
 
-public class FlightDepartingReturningAnswer implements Task {
+public class FlightDepartingReturningQuestion implements Task {
 	
 	public static String saveData;
 	public static String substr;
 
 	
 	
-	public static FlightDepartingReturningAnswer theGetText() {
+	public static FlightDepartingReturningQuestion theGetText() {
 		 
-		return instrumented(FlightDepartingReturningAnswer.class);
+		return instrumented(FlightDepartingReturningQuestion.class);
 	}
 
 	public static String getSaveData() {
-		String substr = saveData.substring(1,7);
+		String substr = saveData.substring(0,7);
 		return substr;
 	}
 
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		System.out.println("PRUEBA YESICA "+BrowseTheWeb.as(actor).find(FlighDepartingPage.lblRoundtripTraveler).getText());
 		this.saveData = BrowseTheWeb.as(actor).find(FlighDepartingPage.lblRoundtripTraveler).getText();
 		
 	}

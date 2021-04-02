@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.Switch;
 import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import userinterface.FlighDepartingPage;
@@ -26,11 +27,10 @@ public class FlightReturning implements Task {
 				Click.on(FlighDepartingPage.lblFirstOption),
 				WaitUntil.the(FlighDepartingPage.lblDepartingReturning,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds(),
 				Click.on(FlighDepartingPage.btnContinue),
-				Click.on(FlighDepartingPage.btnNoThanks));
-				//WaitUntil.the(FlighDepartingPage.lblPriceSummary,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds());
-
-			//	WaitUntil.the(FlighDepartingPage.lblDepartingReturning,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds()
-				
+				Click.on(FlighDepartingPage.btnNoThanks),
+		        Switch.toWindowTitled("Flight details | Travelocity"),
+		        WaitUntil.the(FlighDepartingPage.lblPriceSummary,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds()
+		        		);
 				
 			
 		

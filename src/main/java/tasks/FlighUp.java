@@ -1,8 +1,6 @@
 package tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterface.selectReprotNewPage.lblDatereport;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;

@@ -9,7 +9,7 @@ import org.junit.Test;
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 
-import util.utils;
+
 
 
 
@@ -40,7 +40,7 @@ public class RunnerTags {
 	public void setup() {
 		try {
 			
-			utils.setupDriver();
+			
 			Logger.info("setup driver");
 		} catch (Exception e) {
 			Logger.error("error about setup of Driver ");
@@ -52,7 +52,7 @@ public class RunnerTags {
 	@RunWith(CucumberWithSerenity.class)	
 	@CucumberOptions (features = "src/test/resources/features/travelocity.feature",
 
-					 tags = "@viaje3",
+					 tags = "@viaje",
 					 glue = "stepdefinitions"
 					 )
 

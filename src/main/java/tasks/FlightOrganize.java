@@ -23,7 +23,7 @@ public class FlightOrganize implements Task {
         actor.attemptsTo(
                 SelectFromOptions.byIndex(1).from(FlighDepartingPage.dropdown)
 
-        );
+        		);
         actor.attemptsTo(
                 WaitUntil.the(FlighDepartingPage.lblFirstOption, WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds()
                 );

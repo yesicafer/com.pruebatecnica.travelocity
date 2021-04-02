@@ -1,9 +1,6 @@
 package tasks;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static userinterface.fillOutTheFormDayReportPage.drdTipoHora;
-import static userinterface.loginform.txtUsername;
-
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -22,13 +19,11 @@ import userinterface.FlighDepartingPage;
 import userinterface.TravelocityPage;
 
 public class FlightDestination implements Task {
+	
 	private String stgleavingFrom;
 	private String stgGoingTo;
 	private String stgdeparting;
 	private String stgreturning;
-
-
-
 
 
 	public FlightDestination(String leavingFrom, String goingTo, String departing, String returning){
@@ -53,12 +48,13 @@ public class FlightDestination implements Task {
 		actor.attemptsTo(Enter.theValue(stgleavingFrom).into(FlightDestinationPage.txtleavingFrom).thenHit(Keys.ENTER));
 		actor.attemptsTo(
 				Click.on(FlightDestinationPage.btnGoTO),
-				Enter.theValue(stgGoingTo).into(FlightDestinationPage.txtGOTO).thenHit(Keys.ENTER));
-		System.out.println("Hola"+ stgdeparting.substring(stgdeparting.indexOf(" ")+1,stgdeparting.lastIndexOf(" ")));
+				Enter.theValue(stgGoingTo).into(FlightDestinationPage.txtGOTO).thenHit(Keys.ENTER));		
 		actor.attemptsTo(Click.on(FlightDestinationPage.btnStarDate));
+		
 		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(stgdeparting.substring(stgdeparting.indexOf(" ")+1,stgdeparting.lastIndexOf(" ")))){
 			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
 		}
+		
 		String day = stgdeparting.substring(0,stgdeparting.indexOf(" ")).trim();
 		FlightDestinationPage.setBtnDay(day);
 		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()));
@@ -66,13 +62,12 @@ public class FlightDestination implements Task {
 		while (!FlightDestinationPage.lblMonth.resolveFor(actor).getText().contains(stgreturning.substring(stgreturning.indexOf(" ")+1,stgreturning.lastIndexOf(" ")))){
 			actor.attemptsTo(Click.on(FlightDestinationPage.BtnNext));
 		}
+		
 		day = stgreturning.substring(0,stgreturning.indexOf(" ")).trim();
 		FlightDestinationPage.setBtnDay(day);
 		actor.attemptsTo(Click.on(FlightDestinationPage.getBtnDay()) ,Click.on( FlightDestinationPage.BtnDone));
 		actor.attemptsTo(Click.on(FlightDestinationPage.BtnSearch),WaitUntil.the(FlighDepartingPage.lblDepartingFlight,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds());
-		
-
-		System.out.println("Hola");
+			
 		
 	}
 
