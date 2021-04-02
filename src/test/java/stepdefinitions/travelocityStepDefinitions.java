@@ -21,6 +21,7 @@ import tasks.FlightDeparting;
 import tasks.FlightDepartingContinue;
 import tasks.FlightDestination;
 import tasks.FlightReturning;
+import tasks.FlightTripTotal;
 import tasks.FlighDestinationLogin;
 
 import tasks.OpenUp;
@@ -84,7 +85,7 @@ public class travelocityStepDefinitions {
 
 	@When("she choose returning flight")
 	public void she_choose_returning_flight() {
-		 OnStage.theActorInTheSpotlight().attemptsTo(FlightReturning.theFirstElement());
+		 OnStage.theActorInTheSpotlight().attemptsTo(FlightReturning.theFirstElement(),FlightTripTotal.toThePage());
 	}
 
 	

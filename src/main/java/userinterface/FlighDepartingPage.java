@@ -21,6 +21,8 @@ public class FlighDepartingPage extends PageObject{
 	public static  final Target lblPriceSummary = Target.the("label price summary").located(By.xpath("//*[@class='uitk-layout-grid-item uitk-layout-grid-item-columnspan-1']//table[@class='uitk-table experimental-pricing']//td[2]//span"));
 	public static  final Target lbltripTotal = Target.the("label trip total").located(By.xpath("//*[@class='uitk-layout-grid-item uitk-layout-grid-item-columnspan-1']//*[@class='uitk-heading-4']"));
 
+	public static final Target dropdown  = Target.the("list dropdown").located(By.xpath("//select[@id='listings-sort']"));
+	public static final  Target listPrice = Target.the("list price").located(By.xpath("//span[@class='uitk-lockup-price']"));
 
 
 }
