@@ -12,17 +12,8 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import questions.Answer;
-import questions.AnswerLogin;
-import questions.FlightDepartingReturningAnswer;
-import tasks.FlighUp;
-import tasks.FlightDeparting;
-import tasks.FlightDestination;
-import tasks.FlightReturning;
-import tasks.FlighDestinationLogin;
-
-import tasks.OpenUp;
-import tasks.fillOutTheFormDayReport;
+import questions.*;
+import tasks.*;
 
 public class travelocityStepDefinitions {
 
@@ -93,6 +84,26 @@ public class travelocityStepDefinitions {
 	  
 	}
 
+	@When("she organizes for the highest price of the flight")
+	public void she_organizes_for_the_highest_price_of_the_flight() {
+		OnStage.theActorInTheSpotlight().wasAbleTo(FlightOrganize.organizeHighest());
+	}
+	@When("she selects  {int} stop with Alaska Airlines")
+	public void she_selects_stop_with_alaska_airlines(Integer int1) {
+		OnStage.theActorInTheSpotlight().wasAbleTo(FlighFilter.selectFilter());
+	}
+
+	@Then("she validates that the filter of a stop with the airline Alaska Airlenes")
+	public void she_validates_that_the_filter_of_a_stop_with_the_airline_alaska_airlenes() {
+		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(FlightFilterQuestions.validate()));
+	}
+
+
+
+	@Then("She validates that the flights are organized for the highest price")
+	public void She_validates_that_the_flights_are_organized_for_the_highest_price() {
+		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(FlightOrganizeValidate.organizeHighestValidate()));
+	}
 	@Then("she observe trip total")
 	public void she_observe_trip_total() {
 	    

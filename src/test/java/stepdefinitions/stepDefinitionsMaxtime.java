@@ -14,6 +14,7 @@ import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import questions.seeTodayDate;
+import tasks.FlightOrganize;
 import tasks.fillOutTheFormDayReport;
 import tasks.login;
 import tasks.selectReportNew;
@@ -62,6 +63,8 @@ public class stepDefinitionsMaxtime {
 	    			 															columns.get("HorasEjecutadas"), columns.get("HorasaPagar"), columns.get("HorasAdicionales"), columns.get("Comentario")));
 	    }
 	}
+
+
 
 	@Then("el guardar y cierra al dia del reporte")
 	public void el_guardar_y_cierra_al_dia_del_reporte() {

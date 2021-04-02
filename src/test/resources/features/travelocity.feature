@@ -46,3 +46,30 @@ Feature: Travelocity
     Examples: 
       | leavingFrom                         | goingTo                                | departing    | returning    |
       | San Diego (SAN - San Diego Intl.)   | San Antonio (SAT - San Antonio Intl.)  | 25 May 2021  | 28 May 2021  |
+
+
+  @viaje4
+  Scenario Outline: travel roundtrip organizes
+    Given than yesica enter the url travelocity
+    When  she choose
+      | leavingFrom       | goingTo       | departing         | returning       |
+      | <leavingFrom>     | <goingTo>     |  <departing>      | <returning>     |
+    And she organizes for the highest price of the flight
+    Then She validates that the flights are organized for the highest price
+
+    Examples:
+      | leavingFrom                         | goingTo                                | departing    | returning    |
+      | San Diego (SAN - San Diego Intl.)   | San Antonio (SAT - San Antonio Intl.)  | 25 May 2021  | 28 May 2021  |
+
+  @viaje5
+  Scenario Outline: travel roundtrip organizes
+    Given than yesica enter the url travelocity
+    When  she choose
+      | leavingFrom       | goingTo       | departing         | returning       |
+      | <leavingFrom>     | <goingTo>     |  <departing>      | <returning>     |
+    And she selects  1 stop with Alaska Airlines
+    Then she validates that the filter of a stop with the airline Alaska Airlenes
+
+    Examples:
+      | leavingFrom                         | goingTo                                | departing    | returning    |
+      | San Diego (SAN - San Diego Intl.)   | San Antonio (SAT - San Antonio Intl.)  | 25 May 2021  | 28 May 2021  |
