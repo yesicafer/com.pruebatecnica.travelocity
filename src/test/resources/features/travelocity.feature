@@ -39,8 +39,6 @@ Feature: Travelocity
     And   she choose departing flight firts option    
     And   she obsereve price    
     And   she choose returning flight    
-    And   she review your trip continue
-    And   she check out
     Then  she observe trip total
     
     Examples: 

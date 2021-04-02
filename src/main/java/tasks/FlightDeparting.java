@@ -24,8 +24,8 @@ public class FlightDeparting implements Task {
 			
 		        actor.attemptsTo(
 		        Click.on(FlighDepartingPage.lblFirstOption),
-				WaitUntil.the(FlighDepartingPage.lblDepartingReturning,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds(),
-				Click.on(FlighDepartingPage.btnContinue));
+				WaitUntil.the(FlighDepartingPage.lblDepartingReturning,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds());
+				
 				
 				/**WaitUntil.the(FlighDepartingPage.lblPriceSummary,WebElementStateMatchers.isVisible()).forNoMoreThan(20).seconds()
 

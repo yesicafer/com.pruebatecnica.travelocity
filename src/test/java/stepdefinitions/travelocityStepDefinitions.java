@@ -14,9 +14,11 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import questions.Answer;
 import questions.AnswerLogin;
+import questions.AnswerTripTotal;
 import questions.FlightDepartingReturningAnswer;
 import tasks.FlighUp;
 import tasks.FlightDeparting;
+import tasks.FlightDepartingContinue;
 import tasks.FlightDestination;
 import tasks.FlightReturning;
 import tasks.FlighDestinationLogin;
@@ -75,7 +77,9 @@ public class travelocityStepDefinitions {
 	@When("she obsereve price")
 	public void she_obsereve_price() {
 		
-		OnStage.theActorInTheSpotlight().attemptsTo(FlightDepartingReturningAnswer.theGetText());
+	     OnStage.theActorInTheSpotlight().attemptsTo(FlightDepartingReturningAnswer.theGetText(),FlightDepartingContinue.theContinue());
+	     System.out.println(FlightDepartingReturningAnswer.getSaveData());
+	     
 	}
 
 	@When("she choose returning flight")
@@ -83,19 +87,12 @@ public class travelocityStepDefinitions {
 		 OnStage.theActorInTheSpotlight().attemptsTo(FlightReturning.theFirstElement());
 	}
 
-	@When("she review your trip continue")
-	public void she_review_your_trip_continue() {
-	   
-	}
-
-	@When("she check out")
-	public void she_check_out() {
-	  
-	}
-
+	
 	@Then("she observe trip total")
 	public void she_observe_trip_total() {
-	    
+	  OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(AnswerTripTotal.toThe()));
+		 System.out.println("asfasdfsf substr"+AnswerTripTotal.toThe());
+
 	}
 
 }

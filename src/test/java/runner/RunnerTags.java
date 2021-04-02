@@ -52,8 +52,8 @@ public class RunnerTags {
 	@RunWith(CucumberWithSerenity.class)	
 	@CucumberOptions (features = "src/test/resources/features/travelocity.feature",
 					 tags = "@viaje3",
-					 glue = "stepdefinitions",
-					 plugin = "pretty")
+					 glue = "stepdefinitions"
+					 )
 	public class runnerTag{
 		
 	}
