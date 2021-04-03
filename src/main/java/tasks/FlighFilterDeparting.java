@@ -15,10 +15,10 @@ import static userinterface.FlighFilterPage.Filter1Stop;
 import static userinterface.FlighFilterPage.filterAlaskaAirlenes;
 
 
-public class FlighFilter implements Task {
+public class FlighFilterDeparting implements Task {
 
-    public static FlighFilter selectFilter(){
-        return instrumented(FlighFilter.class);
+    public static FlighFilterDeparting selectFilter(){
+        return instrumented(FlighFilterDeparting.class);
     }
 
 

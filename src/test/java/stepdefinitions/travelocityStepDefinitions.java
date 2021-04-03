@@ -18,7 +18,7 @@ import questions.FlightMsnLoginQuestion;
 import questions.FlighTripTotalQuestion;
 import questions.FlightCheckOutQuestions;
 import questions.FlightDepartingReturningQuestion;
-import questions.FlightFilterQuestions;
+import questions.FlightFilterDepartingQuestions;
 import questions.FlightOrganizeQuestion;
 import tasks.FlighUp;
 import tasks.FlightCheckOut;
@@ -29,7 +29,7 @@ import tasks.FlightDestination;
 import tasks.FlightOrganize;
 import tasks.FlightReturning;
 import tasks.FlighDestinationLogin;
-import tasks.FlighFilter;
+import tasks.FlighFilterDeparting;
 import tasks.OpenUp;
 
 
@@ -91,7 +91,7 @@ public class travelocityStepDefinitions {
 	}
 	@Then("she validates that the filter of a stop with the airline Alaska Airlenes")
 	public void she_validates_that_the_filter_of_a_stop_with_the_airline_alaska_airlenes() {
-		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(FlightFilterQuestions.validate()));
+		OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(FlightFilterDepartingQuestions.validate()));
 	}
 
 	@When("she organizes for the highest price of the flight")
@@ -100,7 +100,7 @@ public class travelocityStepDefinitions {
 	}
 	@When("she selects  {int} stop with Alaska Airlines")
 	public void she_selects_stop_with_alaska_airlines(Integer int1) {
-		OnStage.theActorInTheSpotlight().wasAbleTo(FlighFilter.selectFilter());
+		OnStage.theActorInTheSpotlight().wasAbleTo(FlighFilterDeparting.selectFilter());
 	}
 
 	@Then("She validates that the flights are organized for the highest price")

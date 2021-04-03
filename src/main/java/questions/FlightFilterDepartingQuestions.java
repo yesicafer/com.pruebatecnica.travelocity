@@ -9,12 +9,12 @@ import userinterface.FlighDepartingPage;
 import static userinterface.FlighFilterPage.lblFilter1Stop;
 import static userinterface.FlighFilterPage.lblfilterAlaskaAirlenes;
 
-public class FlightFilterQuestions implements Question<Boolean> {
+public class FlightFilterDepartingQuestions implements Question<Boolean> {
 
 
 
-    public static FlightFilterQuestions validate(){
-        return new FlightFilterQuestions();
+    public static FlightFilterDepartingQuestions validate(){
+        return new FlightFilterDepartingQuestions();
     }
 
     @Override

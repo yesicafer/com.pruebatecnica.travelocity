@@ -56,7 +56,7 @@ Los test se incian automáticamente en el navegador de Chrome, por lo que es nec
 * Git
 
 
-# Descargar proyecto en github  
+## Descargar proyecto en github  
 
 * https://github.com/yesicafer/com.pruebatecnica.travelocity.git
 
