@@ -57,9 +57,9 @@ Configurar variables de Entorno
 
 # Descargar proyecto en github  
 
-git remote add origin https://github.com/yesicafer/com.pruebatecnica.travelocity.git
-git branch -M main
-git push -u origin main
+* https://github.com/yesicafer/com.pruebatecnica.travelocity.git
+> Se ubica en la carpeta en el equipo para clonar el proyecto con Git bash
+> Git bash se ingresa el siguiente comando git clone https://github.com/yesicafer/com.pruebatecnica.travelocity.git
 
 
 
